@@ -836,8 +836,16 @@ col_dens_allocated : &
             !luse2usgs(:) = (/ (i,i=1,config_flags%num_land_cat) /)
             luse2usgs(:) = (/ (i,i=1,num_land_cat) /)
           elseif( trim(mminlu_loc) == 'MODIFIED_IGBP_MODIS_NOAH' ) then
-            luse2usgs(:) = (/ 14,13,12,11,15,8,9,10,10,7, &
-                              17,4,1,5,24,19,16,21,22,23 /)
+!            luse2usgs(:) = (/ 14,13,12,11,15,8,9,10,10,7, &
+!                              17,4,1,5,24,19,16,21,22,23 /)
+          ! cenlin: modify to work with urban LCZ 61 categories 
+            luse2usgs(:) = (/ 14,13,12,11,15, 8, 9,10,10, 7, &
+                              17, 4, 1, 5,24,19,16,21,22,23, &
+                               1, 1, 1, 1, 1, 1, 1, 1, 1, 1, &
+                               1, 1, 1, 1, 1, 1, 1, 1, 1, 1, &
+                               1, 1, 1, 1, 1, 1, 1, 1, 1, 1, &
+                               1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 /)
+
           endif
         endif
 !--
